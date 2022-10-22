@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.works.todolist.ui.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/homeToDetails"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/homeToRegister"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.works.todolist.ui.fragment.DetailsFragment"
+        android:label="fragment_yapilacak_detay"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="toDoItem"
+            app:argType="com.works.todolist.data.entity.ToDos" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.works.todolist.ui.fragment.RegisterFragment"
+        android:label="fragment_yapilacak_kayit"
+        tools:layout="@layout/fragment_register" />
+</navigation>
